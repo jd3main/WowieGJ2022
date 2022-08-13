@@ -76,15 +76,6 @@ public class TextDatabase : MonoBehaviour
             }
         }
     }
-
-#if UNITY_EDITOR
-    [UnityEditor.Callbacks.DidReloadScripts]
-    public void OnScriptsReloaded()
-    {
-        Init();
-    }
-#endif  // UNITY_EDITOR
-
 }
 
 
