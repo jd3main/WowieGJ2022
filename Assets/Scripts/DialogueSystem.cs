@@ -5,17 +5,27 @@ using TMPro;
 
 public class DialogueSystem : MonoBehaviour
 {
+    public static DialogueSystem instance;
+
     public TextMeshPro textUI;
     public List<string> textQueue;
     public float playTextSpeed = 20;
     public string current;
     public KeyCode nextKey = KeyCode.Mouse0;
-    
+
     bool nextKeyClicked = false;
     Coroutine animationCoroutine;
 
+
+    private void Awake()
+    {
+        instance = this;
+        current = null;
+    }
+
     void Start()
     {
+        /*
         for (int i = 0; i < 100; i++)
         {
             string s = "";
@@ -25,7 +35,7 @@ public class DialogueSystem : MonoBehaviour
             }
             Enqueue(s);
         }
-        PlayNext();
+        */
     }
 
     private void Update()
@@ -40,9 +50,14 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-
-    public void Enqueue(string s)
+    public static void Enqueue(string s)
     {
+        instance._Enqueue(s);
+    }
+
+    public void _Enqueue(string s)
+    {
+        Debug.Log($"Enqueue({s})");
         textQueue.Add(s);
         if (current == null)
             PlayNext();
@@ -64,6 +79,7 @@ public class DialogueSystem : MonoBehaviour
     public void CloseDialogue()
     {
         textUI.text = "";
+        current = null;
         StopCoroutine(animationCoroutine);
     }
 
