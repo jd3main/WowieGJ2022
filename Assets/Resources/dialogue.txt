@@ -1,0 +1,71 @@
+類別	項目	ID	自動音效	通知/畫面描述/AI回應	玩家內心吐槽	EN_通知/畫面描述/AI回應	EN_玩家內心吐槽	備註
+非限定反應	(any default)	random_01		誒誒誒你幹嘛？幹嘛？		What are you doing? Why?		
+非限定反應	(any default)	random_02		呀妹樓！		UNACCEPTABLE!		
+非限定反應	(any default)	random_03		……住手。		Please, stop.		
+非限定反應	(any default)	random_04		別鬧了。				
+非限定反應	(any default)	random_05		你開心就好。		...Whatever.		
+非限定反應	(any default)	random_06		哼～哼～🎶哼～♪		hum~hum~🎶hum~~♪		
+非限定反應	(any default)	random_07		呵呵。		Very funny.		
+非限定反應	(any default)	random_08		呵呵～		Ha, ha, ha.		
+非限定反應	(any default)	random_09		啊！（憤怒）		[ANGRY NOISE]		
+非限定反應	(any default)	random_10		啊！（愉悅）		[HAPPY NOISE]		
+非限定反應	(any default)	random_11		啊！（敷衍）		Uh huh.		
+非限定反應	(any default)	random_12		啊！（棒讀）		Oh.		
+非限定反應	(any default)	random_13		嗚——！		AAAARRRRGGGGHHHH------		
+非限定反應	(any default)	random_14		唔……		Ugh...		
+非限定反應	(any default)	random_15		？		[ ? ]		
+非限定反應	(any default)	random_16		！		[ ! ]		
+非限定反應	(any default)	random_17		！？		[ !? ]		
+非限定反應	(any default)	random_18		！！！		[ ! ! ! ]		
+非限定反應	(any default)	random_19		喔。		Bruh.		
+非限定反應	(any default)	random_20		。。。。。。		[ . . . . . . ]		
+								
+								
+								
+								
+								
+								
+								
+								
+操作手把	煞車			逼逼、那是煞車！不要亂拉！		[BEEP-BEEP] That's the brake, Please don't touch it.		增加損壞度 減緩速度？
+操作手把	手煞車		（震動）	逼逼、飛船強制停止！ 請不要亂煞車好嗎 [=A=]		[BEEP-BEEP] The ship has stopped because SOMEONE just engaged the hand brakes. Thanks, and please never do it again.		增加損壞度 過一陣子才重新往前跑？
+操作手把	油門		（引擎聲 / 賽車起步踩油門？）	逼逼、加速！ 引擎加速到標準曲速 2.5!		[BEEP-BEEP] ACCELERATING. Speed reaching Warp 2.5------		增加損壞度 隕石加速衝來。過一陣子恢復正常速度
+操作手把	可以轉下來的拉桿			逼──開啟貨倉！！！ 				人飛出去（直接結局？！）
+操作手把	雷射砲		（PewPewPew）	......你開心就好。		...FINE. Whatever.		
+駕駛面板	星圖導航			就快到了，你又想跑哪去？		We're arriving, where do you wanna go instead?		
+駕駛面板	防護罩鈕			又浪費電（關掉）		Please, keep our energy for only neccessary using. [CLOSED]		
+駕駛面板	準星		（瞄準音效）	幹什麼幹什麼？別浪費彈藥。		Please, reserve the ammo for emergency using.		
+駕駛面板	裂痕1			啊哈哈哈哈別騷了啊哈哈哈哈——		AHAHAHAHA STOP IT IT TICKLES AHAHAHAHAHA------		
+駕駛面板	裂痕2			別摸那裡啊豈可修！		Do NOT touch that! [Blushed]		
+駕駛面板	裂痕3			…………？		[NOISES]		
+駕駛面板	星際雨刷			逼哺！啟動雨刷！				配合畫面雨刷
+駕駛面板	空調鈕			逼──空調調至 [100] 克爾文溫度。 浪費電（緩步加減回常溫）				隨機決定跳高或跳低？[600] or [100] 這樣
+物品	行車平安吊飾		（吊飾碰撞音）	這次完成任務我就回老家結婚		I'm going home after the mission finished.		
+物品	沒用的後照鏡		（擦鏡子玻璃的聲音）	謝謝，雖然沒什麼幫助	說到底為什麼會有後照鏡。。。			
+物品	飛行記錄器		（Windows Error聲）	那可是黑盒子。別想銷毀你亂搞的紀錄呀，逼逼波波	黑盒子放在這麼明顯的地方嗎......			
+物品	ㄉㄨㄞ ㄉㄨㄞ固定飾品		（端邀～端喲～）	就算是你送我的東西也不能亂碰				
+物品	小垃圾桶		（東西丟垃圾桶的東西）					
+物品	試管盆栽/盆栽牆		（摸摸摸）	很療癒吧！				
+物品	會噴飛的滅火器		（滅火器噴氣亂飛一通）	哎喲喂看不見了啦！				滅火器在畫面上到處飛？
+物品	雞毛撢子		（雞毛撢子亂拍一通）	哈……哈啾！	AI也會打噴嚏嗎？			
+物品	暴走咕咕雞	item_goose	（咕咕咕）					放出鵝在畫面上到處亂跑
+物品	音響	item_audio		放音樂/換bgm				要有不同首BGM才能做這個功能
+				APE！				
+								
+								
+								
+								
+				hmmmm....				
+				Oops.				
+				HAHAHA.				
+				What's up bro?				
+				Oh, man.				
+				No way....				
+				What the hell?				
+				Don't touch me!				
+				WOW				
+				Oh my god				
+				Oh my goodness				
+				Ridiculous.				
+				You little fool.				
+				Nice try.				
