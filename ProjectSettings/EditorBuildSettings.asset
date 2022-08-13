@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ending.unity
     guid: 38bea13004aa41f429fcd1295a585819
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 6d8f11be2d8790341b6b82fc999577ca
+  - enabled: 1
+    path: Assets/Scenes/SpaceShip.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
