@@ -7,6 +7,8 @@ public class Button : Interactive
     public List<RefText> dialogues = new List<RefText>();
     [SerializeField]
     private float recoverTime = 1f;
+    [SerializeField]
+    private bool randomDialogue = false;
 
     private float pressedTime;
     private bool isPressed;
@@ -40,9 +42,20 @@ public class Button : Interactive
         isPressed = true;
         pressedTime = 0;
 
-        foreach (RefText t in dialogues)
+        if (randomDialogue)
         {
-            DialogueSystem.Enqueue(t);
+            int repeat = Random.Range(1, 3);
+            for (int i=0; i<repeat; i++)
+            {
+                DialogueSystem.Enqueue(dialogues[Random.Range(0, dialogues.Count)]);
+            }
+        }
+        else
+        {
+            foreach (RefText t in dialogues)
+            {
+                DialogueSystem.Enqueue(t);
+            }
         }
     }
 }
