@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Interactive : MonoBehaviour
 {
-    public SAN san;
-    public Durability durability;
+    public OnInteractEvent onInteract;
 
-    public abstract void StartInteraction();
-    
-    public void FinishInteraction()
-    {
-        
-    }
-    
+    public abstract void Interact();
+
+    [System.Serializable]
+    public class OnInteractEvent : UnityEvent { }
 }
