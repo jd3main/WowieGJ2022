@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Sirenix.OdinInspector;
 
 public class Game : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Game : MonoBehaviour
     [HideInInspector]
     public static float curTime;
 
+    
     [Header("SAN")]
     public BarValueUI sanUI;
     public float maxSAN = 100;
@@ -20,6 +22,7 @@ public class Game : MonoBehaviour
     [HideInInspector]
     public static float curSAN;
 
+    
     [Header("Durability")]
     public BarValueUI durabilityUI;
     public float maxDurability = 100;
@@ -27,6 +30,30 @@ public class Game : MonoBehaviour
     [HideInInspector]
     public static float curDurability;
 
+
+    [Header("Interactions")]
+    public float laserSAN = 5;
+    public float laserDurability = -6;
+
+    public float shieldSAN = 3;
+    public float shieldDurability = -4;
+
+    public float aimSAN = 4;
+    public float aimDurability = -3;
+
+    public float smallButtonSAN = -2;
+    public float smallButtonDurability = 2;
+
+    public float squareButtonSAN = 2;
+    public float squareButtonDurbility = -2;
+
+    public float acceleratorSAN = 4;
+    public float acceleratorDurability = -8;
+
+    public float breakSAN = 5;
+    public float breakDurability = -10;
+
+    [Header("Others")]
     [SerializeField]
     private LayerMask rayCastMask;
     private RaycastHit hit;
@@ -109,44 +136,44 @@ public class Game : MonoBehaviour
 
     public void ButtonLaserActivate()
     {
-        curDurability += -6;
-        curSAN += 5;
+        curDurability += laserDurability;
+        curSAN += laserSAN;
     }
 
     public void ButtonShieldActivate()
     {
-        curDurability += -4;
-        curSAN += 3;
+        curSAN += shieldSAN;
+        curDurability += shieldDurability;
     }
 
     public void ButtonAimActive()
     {
-        curDurability += -3;
-        curSAN += 3;
+        curSAN += aimSAN;
+        curDurability += aimDurability;
     }
 
     public void SmallButtonActive()
     {
-        curDurability += Random.Range(-3f, 2f);
-        curSAN += Random.Range(-3f, 3f);
+        curSAN += smallButtonSAN;
+        curDurability += smallButtonDurability;
     }
 
     public void SquareButtonActive()
     {
-        curDurability += Random.Range(-3f, 0);
-        curSAN += Random.Range(1f, 3f);
+        curSAN += squareButtonSAN;
+        curDurability += squareButtonDurbility;
     }
 
-    public void AccelatorActive()
+    public void AcceleratorActive()
     {
-        curDurability += -8;
-        curSAN += 4;
+        curSAN += acceleratorSAN;
+        curDurability += acceleratorDurability;
     }
 
     public void BreakActive()
     {
-        curDurability += -10;
-        curSAN += 4;
+        curSAN += breakSAN;
+        curDurability += breakDurability;
         animationCoroutine = StartCoroutine(ShakeCameraAnimation());
     }
 
