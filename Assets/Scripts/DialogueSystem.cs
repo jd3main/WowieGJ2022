@@ -7,6 +7,7 @@ using Sirenix.OdinInspector;
 
 public class DialogueSystem : MonoBehaviour
 {
+    [ShowInInspector]
     public static DialogueSystem instance;
 
     [Required]
@@ -92,7 +93,8 @@ public class DialogueSystem : MonoBehaviour
                 yield return null;
                 break;
             }
-            audioSource.Play();
+            if (current[i] != ' ')
+                audioSource.Play();
             yield return new WaitForSeconds(1f/playTextSpeed);
             yield return null;
         }

@@ -10,6 +10,9 @@ public class SceneTransition : MonoBehaviour
     public float outDuration = 1;
     public float inDuration = 1;
     public string sceneName;
+    public AudioSource audioToFadeOut;
+
+    private float initialVolumn;
 
     void Awake()
     {
@@ -36,10 +39,15 @@ public class SceneTransition : MonoBehaviour
         c.a = 0;
         image.color = c;
         image.gameObject.SetActive(true);
+        if (audioToFadeOut != null)
+            initialVolumn = audioToFadeOut.volume;
         float t0 = Time.time;
         while (c.a < 1)
         {
-            c.a = Mathf.Min((Time.time - t0)/inDuration, 1);
+            float value = Mathf.Min((Time.time - t0) / inDuration, 1);
+            c.a = value;
+            if (audioToFadeOut != null)
+                audioToFadeOut.volume = initialVolumn * (1-value);
             image.color = c;
             yield return null;
         }
@@ -49,7 +57,10 @@ public class SceneTransition : MonoBehaviour
         t0 = Time.time;
         while (c.a > 0)
         {
-            c.a = Mathf.Max(1-(Time.time - t0) / outDuration, 0);
+            float value = Mathf.Max(1 - (Time.time - t0) / outDuration, 0);
+            c.a = value;
+            if (audioToFadeOut != null)
+                audioToFadeOut.volume = initialVolumn * (1 - value);
             image.color = c;
             yield return null;
         }

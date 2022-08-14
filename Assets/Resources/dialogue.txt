@@ -1,9 +1,6 @@
 	ID	Text_EN
 開場		
-	opening_01	You are a star pilot.
-	opening_02	You are in the final part of a long-term mission with an AI.
-	opening_03	After having a lot of fights, it's AI who flies the starship now.
-	opening_04	Go click somewhere to help yourselves accomplish the mission.
+	opening	You are a pilot, in the final part of a long-term mission, with a spaceship and a built-in AI.\nAfter lots of arguements, it's AI who flies the ship now.\nWork together with AI to reach the destination. (Click anywhere to do something)
 		
 調戲		
 	random_01	What are you doing? Why?
@@ -46,7 +43,7 @@
 		
 		
 	item_01	[BEEP-BEEP] That's the brake, Please don't touch it.
-	item_02	[BEEP-BEEP] The ship has stopped because SOMEONE just engaged the hand brakes. Thanks, and please never do it again.
+	item_02	[CLATTER] The ship has stopped because SOMEONE just engaged the hand brakes.  Thanks, and please never do it again.
 	item_03	[BEEP-BEEP] ACCELERATING. Speed reaching Warp 2.5------
 	item_04	todo
 	item_05	...FINE. Whatever.
@@ -57,15 +54,15 @@
 	item_10	Do NOT touch that! [Blushed]
 	item_11	[NOISES]
 	item_12	todo
-	item_13	todo
+	item_13	[BOOP] Setting conditioner to 100 kelvin.  You must be joking, please save energy.
 	item_14	I'm going home to get married after the mission finished.
 	item_15	Thank you, although it does nothing helpful.
 	item_16	That's the black box, recording all the mess you have done. [BEEP-BEEP]
 	item_17	Mine.
 	item_18	todo
-	item_19	Charming.
+	item_19	Charming, isn't it?
 	item_20	WHAT THE HELL
-	item_21	Ah-Ah-AH-CHOO
+	item_21	Ah...Ah-ah-AH-CHOO
 	item_22	todo
 	item_23	todo
 		
