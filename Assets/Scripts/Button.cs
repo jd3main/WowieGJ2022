@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Button : Interactive
 {
+    public List<RefText> dialogues = new List<RefText>();
     [SerializeField]
     private float recoverTime = 1f;
-    
+
     private float pressedTime;
     private bool isPressed;
     private Vector3 originalScale;
@@ -15,7 +16,6 @@ public class Button : Interactive
     private void Start()
     {
         isPressed = false;
-        pressedTime = 0;
         originalScale = transform.localScale;
     }
 
@@ -28,16 +28,21 @@ public class Button : Interactive
             {
                 transform.localScale = originalScale;
                 isPressed = false;
-                pressedTime = 0;
             }
         }
     }
 
-    public override void StartInteraction()
-    {   
+    public override void Interact()
+    {
+        onInteract.Invoke();
+        
         transform.localScale = new Vector3(originalScale.x, originalScale.y * 0.5f, originalScale.z);
         isPressed = true;
         pressedTime = 0;
-        durability.DecreaseDurability(10);
+
+        foreach (RefText t in dialogues)
+        {
+            DialogueSystem.Enqueue(t);
+        }
     }
 }

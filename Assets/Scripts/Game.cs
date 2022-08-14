@@ -5,24 +5,39 @@ using UnityEngine.Events;
 
 public class Game : MonoBehaviour
 {
+    public SAN san;
+    public Durability durability;
+
+    [SerializeField]
+    private LayerMask rayCastMask;
+    private RaycastHit hit;
+    private float rayCastDistance = 100f;
+
     public static Game instance;
-    public float progress;
     public OnGameStartEvent onGameStart;
     public OnGameEndEvent onGameEnd;
 
-    
+    private bool isInteracting = false;
 
     void Awake()
     {
         instance = this;
-        progress = 0;
     }
 
     void Update()
     {
-        if (progress >= 1)
+        if (!isInteracting && Input.GetMouseButtonDown(0))
         {
-            EndGame();
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, rayCastDistance, rayCastMask))
+            {
+                Interactive obj = hit.transform.GetComponent<Interactive>();
+                if (obj != null)
+                {
+                    isInteracting = true;
+                    obj.Interact();
+                }
+            }
         }
     }
 
@@ -32,10 +47,19 @@ public class Game : MonoBehaviour
         
     }
 
-
     public void EndGame()
     {
         onGameEnd.Invoke();
+    }
+
+    public void DialogueClosed()
+    {
+        isInteracting = false;
+    }
+
+    public void ButtonActivate()
+    {
+        durability.DecreaseDurability(10);
     }
 }
 
