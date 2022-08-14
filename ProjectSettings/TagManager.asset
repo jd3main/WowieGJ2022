@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpaceShip
   - MeteoroidDestroyer
+  - Meteoroid
   layers:
   - Default
   - TransparentFX

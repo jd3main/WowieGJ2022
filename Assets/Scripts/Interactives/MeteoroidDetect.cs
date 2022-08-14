@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class MeteoroidDetect : Interactive
 {
+    public List<RefText> dialogues = new List<RefText>();
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Meteoroid")
         {
-            onInteract.Invoke();
+            Interact();
         }
     }
 
     public override void Interact()
     {
-        
+        onInteract.Invoke();
+        DialogueSystem.Enqueue(dialogues[Random.Range(0, dialogues.Count)]);
     }
 }

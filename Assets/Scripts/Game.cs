@@ -184,6 +184,7 @@ public class Game : MonoBehaviour
     {
         curSAN += meteoroidHitSAN;
         curDurability += meteoroidHitDurability;
+        isInteracting = true;
     }
 
     private IEnumerator ShakeCameraAnimation()
