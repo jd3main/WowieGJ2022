@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class DialogueSystem : MonoBehaviour
@@ -12,6 +13,7 @@ public class DialogueSystem : MonoBehaviour
     public float playTextSpeed = 20;
     public string current;
     public KeyCode nextKey = KeyCode.Mouse0;
+    public OnDialogueClosedEvent onDialogueClosed;
 
     bool nextKeyClicked = false;
     Coroutine animationCoroutine;
@@ -81,6 +83,7 @@ public class DialogueSystem : MonoBehaviour
         textUI.text = "";
         current = null;
         StopCoroutine(animationCoroutine);
+        onDialogueClosed.Invoke();
     }
 
     public IEnumerator RunDialogueAnimation()
@@ -119,4 +122,7 @@ public class DialogueSystem : MonoBehaviour
         }
         return false;
     }
+
+    [System.Serializable]
+    public class OnDialogueClosedEvent : UnityEvent { }
 }
