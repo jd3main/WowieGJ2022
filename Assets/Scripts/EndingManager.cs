@@ -34,10 +34,8 @@ public class EndingManager : MonoBehaviour
 
     public IEnumerator _Restart()
     {
-        transition.duration = 2.0f;
-        transition.Play();
+        transition.Play("SpaceShip");
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene("SpaceShip");
     }
 }
 
