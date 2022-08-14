@@ -2,14 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public SAN san;
-    public Durability durability;
-    public Timer timer;
+    [Header("Timer")]
+    public TimerUI timerUI;
+    public float maxTime = 120;
+    [HideInInspector]
+    public static float curTime;
 
-    public float sanDecreaseSpeed = 1f;
+    [Header("SAN")]
+    public BarValueUI sanUI;
+    public float maxSAN = 100;
+    public float initSAN = 70;
+    public float sanDropSpeed = 1f;
+    [HideInInspector]
+    public static float curSAN;
+
+    [Header("Durability")]
+    public BarValueUI durabilityUI;
+    public float maxDurability = 100;
+    public float initDurability = 100;
+    [HideInInspector]
+    public static float curDurability;
 
     [SerializeField]
     private LayerMask rayCastMask;
@@ -20,17 +36,39 @@ public class Game : MonoBehaviour
     public OnGameStartEvent onGameStart;
     public OnGameEndEvent onGameEnd;
 
+    private float oneSecondCounter;
     private bool isInteracting = false;
-    private int curTime;
     Coroutine animationCoroutine;
 
     void Awake()
     {
         instance = this;
-        curTime = Mathf.RoundToInt(timer.maxTime);
+
+        oneSecondCounter = 0;
+        curTime = 0;
+        curSAN = initSAN;
+        curDurability = initDurability;
     }
 
     void Update()
+    {
+        curTime += Time.deltaTime;
+        if (curTime >= maxTime)
+        {
+            SceneManager.LoadScene("Ending");
+        }
+        oneSecondCounter += Time.deltaTime;
+        if (oneSecondCounter >= 1)
+        {
+            oneSecondCounter -= 1;
+            curSAN -= sanDropSpeed;
+        }
+
+        CheckMouseClick();
+        UpdateUI();
+    }
+
+    private void CheckMouseClick()
     {
         if (!isInteracting && Input.GetMouseButtonDown(0))
         {
@@ -45,14 +83,14 @@ public class Game : MonoBehaviour
                 }
             }
         }
-
-        if (Mathf.RoundToInt(timer.remainingTime) < curTime)
-        {
-            curTime--;
-            san.DecreaseSAN(sanDecreaseSpeed);
-        }
     }
 
+    private void UpdateUI()
+    {
+        timerUI.Render(maxTime - curTime);
+        sanUI.Render(curSAN, maxSAN);
+        durabilityUI.Render(curDurability, maxDurability);
+    }
 
     public void StartGame()
     {
@@ -71,48 +109,48 @@ public class Game : MonoBehaviour
 
     public void ButtonLaserActivate()
     {
-        durability.DecreaseDurability(6);
-        san.IncreaseSAN(5);
+        curDurability += -6;
+        curSAN += 5;
     }
 
     public void ButtonShieldActivate()
     {
-        durability.DecreaseDurability(4);
-        san.IncreaseSAN(3);
+        curDurability += -4;
+        curSAN += 3;
     }
 
     public void ButtonAimActive()
     {
-        durability.DecreaseDurability(3);
-        san.IncreaseSAN(3);
+        curDurability += -3;
+        curSAN += 3;
     }
 
     public void SmallButtonActive()
     {
-        durability.IncreaseDurability(Random.Range(-3f, 2f));
-        san.DecreaseSAN(Random.Range(-3f, 3f));
+        curDurability += Random.Range(-3f, 2f);
+        curSAN += Random.Range(-3f, 3f);
     }
 
     public void SquareButtonActive()
     {
-        durability.DecreaseDurability(Random.Range(0, 3));
-        san.IncreaseSAN(Random.Range(1, 3));
+        curDurability += Random.Range(-3f, 0);
+        curSAN += Random.Range(1f, 3f);
     }
 
     public void AccelatorActive()
     {
-        durability.DecreaseDurability(8);
-        san.IncreaseSAN(4);
+        curDurability += -8;
+        curSAN += 4;
     }
 
     public void BreakActive()
     {
-        durability.DecreaseDurability(10);
-        san.IncreaseSAN(4);
+        curDurability += -10;
+        curSAN += 4;
         animationCoroutine = StartCoroutine(ShakeCameraAnimation());
     }
 
-    public IEnumerator ShakeCameraAnimation()
+    private IEnumerator ShakeCameraAnimation()
     {
         float shakeDuration = 1f;
         float shakeAmp = 0.005f;
