@@ -34,7 +34,7 @@ public class EndingManager : MonoBehaviour
 
     public IEnumerator _Restart()
     {
-        transition.Play("SpaceShip");
+        transition.Play();
         yield return new WaitForSeconds(2.0f);
     }
 }

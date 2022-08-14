@@ -27,9 +27,10 @@ public class SceneTransition : MonoBehaviour
     }
     */
 
-    public void Play(string sceneName)
+    public void Play(string sceneName = null)
     {
-        this.sceneName = sceneName;
+        if (!string.IsNullOrEmpty(sceneName))
+            this.sceneName = sceneName;
         StartCoroutine(_Play());
     }
 
