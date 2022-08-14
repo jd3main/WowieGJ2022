@@ -6197,7 +6197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8772118550611065959, guid: 649c6658835ed3b499d6f6f2ce243f5d, type: 3}
       propertyPath: m_text
-      value: 'Target Distance: 120.00 ly'
+      value: 'Target Distance: 12.00 ly'
       objectReference: {fileID: 0}
     - target: {fileID: 8772118550611065959, guid: 649c6658835ed3b499d6f6f2ce243f5d, type: 3}
       propertyPath: m_fontSize

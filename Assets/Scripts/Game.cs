@@ -46,7 +46,7 @@ public class Game : MonoBehaviour
             }
         }
 
-        if (Mathf.RoundToInt(timer.RemainingTime) < curTime)
+        if (Mathf.RoundToInt(timer.remainingTime) < curTime)
         {
             curTime--;
             san.DecreaseSAN(sanDecreaseSpeed);
