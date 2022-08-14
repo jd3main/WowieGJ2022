@@ -772,13 +772,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a60fb6413cf3904e935791ead24a4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s: 'You are a pilot, in the final phase of a long-term mission, with a spaceship
-    and a built-in AI.
+  s: 'You are piloting a spaceship with a built-in AI, TAPI, in the final phase of
+    a long-term mission.
 
-    After lots of arguements, it''s AI who flies the ship
+    After lots of arguments, it''s TAPI who flies the ship
     now.
 
-    Work together with AI to reach the destination. (Click anywhere to
+    Work together with TAPI to reach the destination. (Click anywhere to
     do something)'
 --- !u!1 &1839746613
 GameObject:
