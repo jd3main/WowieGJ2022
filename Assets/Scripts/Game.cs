@@ -7,13 +7,16 @@ using Sirenix.OdinInspector;
 
 public class Game : MonoBehaviour
 {
+    public static RelationStatus relationStatus;
+    public static ShipStatus shipStatus;
+
     [Header("Timer")]
     public TimerUI timerUI;
     public float maxTime = 120;
     [HideInInspector]
     public static float curTime;
 
-    
+
     [Header("SAN")]
     public BarValueUI sanUI;
     public float maxSAN = 100;
@@ -22,7 +25,7 @@ public class Game : MonoBehaviour
     [HideInInspector]
     public static float curSAN;
 
-    
+
     [Header("Durability")]
     public BarValueUI durabilityUI;
     public float maxDurability = 100;
@@ -67,6 +70,7 @@ public class Game : MonoBehaviour
     private bool isInteracting = false;
     Coroutine animationCoroutine;
 
+
     void Awake()
     {
         instance = this;
@@ -82,7 +86,7 @@ public class Game : MonoBehaviour
         curTime += Time.deltaTime;
         if (curTime >= maxTime)
         {
-            SceneManager.LoadScene("Ending");
+            EndGame();
         }
         oneSecondCounter += Time.deltaTime;
         if (oneSecondCounter >= 1)
@@ -93,6 +97,10 @@ public class Game : MonoBehaviour
 
         CheckMouseClick();
         UpdateUI();
+        if (CheckGameOver())
+        {
+            EndGame();
+        }
     }
 
     private void CheckMouseClick()
@@ -117,6 +125,90 @@ public class Game : MonoBehaviour
         timerUI.Render(maxTime - curTime);
         sanUI.Render(curSAN, maxSAN);
         durabilityUI.Render(curDurability, maxDurability);
+    }
+
+    public bool CheckGameOver()
+    {
+        if (sanLevel == SanLevel.High)
+            relationStatus = RelationStatus.Seeing;
+        if (sanLevel == SanLevel.Normal)
+            relationStatus = RelationStatus.Friend;
+        if (sanLevel == SanLevel.Low)
+            relationStatus = RelationStatus.Normal;
+        if (sanLevel == SanLevel.VeryLow)
+            relationStatus = RelationStatus.Crazy;
+
+        if (durabilityLevel == DurabilityLevel.Distroyed)
+        {
+            shipStatus = ShipStatus.Boom;
+            return true;
+        }
+
+        if (durabilityLevel == DurabilityLevel.Danger && travelProgress == TravelProgress.Near)
+        {
+            shipStatus = ShipStatus.Drift;
+            return true;
+        }
+
+        if (durabilityLevel == DurabilityLevel.Danger && travelProgress == TravelProgress.Almost)
+        {
+            shipStatus = ShipStatus.Crash;
+            return true;
+        }
+
+        if (travelProgress == TravelProgress.Arrived)
+        {
+            shipStatus = ShipStatus.Arrive;
+            return true;
+        }
+
+        return false;
+    }
+
+    public SanLevel sanLevel
+    {
+        get
+        {
+            if (curSAN <= 30)
+                return SanLevel.VeryLow;
+            else if (curSAN <= 60)
+                return SanLevel.Low;
+            else if (curSAN <= 80)
+                return SanLevel.Normal;
+            else
+                return SanLevel.High;
+        }
+    }
+
+    public DurabilityLevel durabilityLevel
+    {
+        get
+        {
+            if (curDurability <= 0)
+                return DurabilityLevel.Distroyed;
+            else if (curDurability <= 30)
+                return DurabilityLevel.Danger;
+            else if (curDurability <= 50)
+                return DurabilityLevel.Poor;
+            else
+                return DurabilityLevel.Okay;
+        }
+    }
+
+    public TravelProgress travelProgress
+    {
+        get
+        {
+            float leftTime = maxTime - curTime;
+            if (leftTime <= 0)
+                return TravelProgress.Arrived;
+            else if (leftTime <= 30)
+                return TravelProgress.Almost;
+            else if (leftTime <= 50)
+                return TravelProgress.Near;
+            else
+                return TravelProgress.Far;
+        }
     }
 
     public void StartGame()
@@ -192,6 +284,31 @@ public class Game : MonoBehaviour
         }
         camera.transform.position = cameraPosition;
     }
+}
+
+
+public enum SanLevel
+{
+    VeryLow,
+    Low,
+    Normal,
+    High,
+}
+
+public enum DurabilityLevel
+{
+    Distroyed,
+    Danger,
+    Poor,
+    Okay,
+}
+
+public enum TravelProgress
+{
+    Far,
+    Near,
+    Almost,
+    Arrived,
 }
 
 

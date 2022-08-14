@@ -9,7 +9,7 @@ using Sirenix.OdinInspector;
 public class EndingManager : MonoBehaviour
 {
     public RelationStatus relationShip;
-    public ShipStatus spaceShip;
+    public ShipStatus shipStatus;
     public TextMeshPro endingInfoTextUI;
     [Required]
     public AudioSource endingDialogueAudioSource;
@@ -19,7 +19,10 @@ public class EndingManager : MonoBehaviour
 
     private void Start()
     {
-        string name = $"Ending_{relationShip.ToString()[0]}_{spaceShip.ToString()[0]}";
+        relationShip = Game.relationStatus;
+        shipStatus = Game.shipStatus;
+
+        string name = $"Ending_{relationShip.ToString()[0]}_{shipStatus.ToString()[0]}";
         var endings = FindObjectsOfType<Ending>(true);
         var targetEnding = endings.Where(e => e.gameObject.name == name).First();
         GameObject endingGO = targetEnding.gameObject;
