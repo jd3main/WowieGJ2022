@@ -38,6 +38,5 @@ public class Button : Interactive
         transform.localScale = new Vector3(originalScale.x, originalScale.y * 0.5f, originalScale.z);
         isPressed = true;
         pressedTime = 0;
-        durability.DecreaseDurability(10);
     }
 }
