@@ -6,7 +6,7 @@
 	random_01	What are you doing? Why?
 	random_02	UNACCEPTABLE!
 	random_03	Please, stop.
-	random_04	todo
+	random_04	Stop playing.
 	random_05	...Whatever.
 	random_06	hum~hum~🎶hum~~♪
 	random_07	Very funny.
@@ -53,7 +53,7 @@
 	item_09	AHAHAHAHA STOP IT IT TICKLES AHAHAHAHAHA------
 	item_10	Do NOT touch that! [Blushed]
 	item_11	[NOISES]
-	item_12	todo
+	item_12	[BEEP] Switching on wipers.
 	item_13	[BOOP] Setting conditioner to 100 kelvin.  You must be joking, please save energy.
 	item_14	I'm going home to get married after the mission finished.
 	item_15	Thank you, although it does nothing helpful.
