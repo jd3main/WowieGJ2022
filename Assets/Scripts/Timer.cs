@@ -9,24 +9,25 @@ public class Timer : MonoBehaviour
     public float maxTime = 120f;
     public TextMeshPro timerUI;
 
-    private float RemainingTime = 0;
+    [HideInInspector]
+    public float remainingTime = 0;
     
     void Start()
     {
-        RemainingTime = maxTime;
+        remainingTime = maxTime;
     }
 
     void Update()
     {
-        RemainingTime -= Time.deltaTime;
+        remainingTime -= Time.deltaTime;
 
-        if (RemainingTime < 0)
+        if (remainingTime < 0)
         {
             SceneManager.LoadScene("Ending");
         }
 
-        int intTime = Mathf.RoundToInt(RemainingTime);
-        timerUI.text = string.Format("{0:000}", intTime);
+        string displayTime = (remainingTime / 10f).ToString("F2");
+        timerUI.text = string.Format("Target Distance: " + displayTime + " ly");
     }
 }
 
