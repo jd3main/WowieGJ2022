@@ -10,7 +10,7 @@ public class TimerUI : MonoBehaviour
     public void Render(float value)
     {
         string distance = (value / 10f).ToString("F2");
-        timerText.text = string.Format("Target Distance: " + distance + " ly");
+        timerText.text = string.Format("Target Distance: " + distance + " lightyears");
     }
 }
 

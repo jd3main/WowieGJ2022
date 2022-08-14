@@ -56,6 +56,9 @@ public class Game : MonoBehaviour
     public float breakSAN = 5;
     public float breakDurability = -10;
 
+    public float meteoroidHitSAN = 3;
+    public float meteoroidHitDurability = -3;
+
     [Header("Others")]
     [SerializeField]
     private LayerMask rayCastMask;
@@ -267,6 +270,13 @@ public class Game : MonoBehaviour
         curSAN += breakSAN;
         curDurability += breakDurability;
         animationCoroutine = StartCoroutine(ShakeCameraAnimation());
+    }
+
+    public void MeteoroidHit()
+    {
+        curSAN += meteoroidHitSAN;
+        curDurability += meteoroidHitDurability;
+        isInteracting = true;
     }
 
     private IEnumerator ShakeCameraAnimation()
