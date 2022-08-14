@@ -4774,22 +4774,22 @@ MonoBehaviour:
   durabilityUI: {fileID: 711657382}
   maxDurability: 100
   initDurability: 100
-  laserSAN: 5
-  laserDurability: -6
-  shieldSAN: 3
-  shieldDurability: -4
-  aimSAN: 4
-  aimDurability: -3
+  laserSAN: 3
+  laserDurability: -5
+  shieldSAN: 1
+  shieldDurability: 3
+  aimSAN: -2
+  aimDurability: -2
   smallButtonSAN: -2
   smallButtonDurability: 2
   squareButtonSAN: 2
   squareButtonDurbility: -2
   acceleratorSAN: 4
-  acceleratorDurability: -8
-  breakSAN: 5
-  breakDurability: -10
+  acceleratorDurability: -6
+  breakSAN: 6
+  breakDurability: -8
   meteoroidHitSAN: 3
-  meteoroidHitDurability: -3
+  meteoroidHitDurability: -2
   rayCastMask:
     serializedVersion: 2
     m_Bits: 8
