@@ -4,12 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using TMPro;
+using Sirenix.OdinInspector;
 
 public class EndingManager : MonoBehaviour
 {
     public RelationStatus relationShip;
     public ShipStatus spaceShip;
     public TextMeshPro endingInfoTextUI;
+    [Required]
+    public AudioSource endingDialogueAudioSource;
+    public AudioClip endingDialogueAudioClip = null;
     public GameObject dialoguePanel;
     public SceneTransition transition;
 

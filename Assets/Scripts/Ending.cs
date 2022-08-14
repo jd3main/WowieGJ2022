@@ -24,6 +24,7 @@ public class Ending : MonoBehaviour
 
         EndingManager endingManager = FindObjectOfType<EndingManager>();
         endingManager.dialoguePanel.SetActive(false);
+        endingManager.endingDialogueAudioSource.clip = endingManager.endingDialogueAudioClip;
         dialogueSystem.textUI = endingManager.endingInfoTextUI;
         dialogueSystem.textUI.gameObject.SetActive(true);
 

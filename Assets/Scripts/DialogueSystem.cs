@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+using Sirenix.OdinInspector;
 
 public class DialogueSystem : MonoBehaviour
 {
     public static DialogueSystem instance;
 
+    [Required]
+    public AudioSource audioSource;
+    [Required]
     public TextMeshPro textUI;
     public List<string> textQueue;
     public float playTextSpeed = 20;
@@ -23,21 +27,12 @@ public class DialogueSystem : MonoBehaviour
     {
         instance = this;
         current = null;
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
     {
-        /*
-        for (int i = 0; i < 100; i++)
-        {
-            string s = "";
-            for (int j = 0; j < 10; j++)
-            {
-                s += i.ToString();
-            }
-            Enqueue(s);
-        }
-        */
     }
 
     private void Update()
@@ -97,6 +92,7 @@ public class DialogueSystem : MonoBehaviour
                 yield return null;
                 break;
             }
+            audioSource.Play();
             yield return new WaitForSeconds(1f/playTextSpeed);
             yield return null;
         }
