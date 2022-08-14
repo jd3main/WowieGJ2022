@@ -14,18 +14,10 @@ public class SceneTransition : MonoBehaviour
 
     private float initialVolumn;
 
-    void Awake()
+    void Start()
     {
         DontDestroyOnLoad(this.gameObject);
     }
-
-    /*
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-            Play();
-    }
-    */
 
     public void Play(string sceneName = null)
     {
@@ -48,14 +40,20 @@ public class SceneTransition : MonoBehaviour
             float value = Mathf.Min((Time.time - t0) / inDuration, 1);
             c.a = value;
             if (audioToFadeOut != null)
-                audioToFadeOut.volume = initialVolumn * (1-value);
+                audioToFadeOut.volume = initialVolumn * (1 - value);
             image.color = c;
             yield return null;
         }
 
         SceneManager.LoadScene(sceneName);
+        StartCoroutine(FadeOut());
+    }
 
-        t0 = Time.time;
+    private IEnumerator FadeOut()
+    {
+        Color c = image.color;
+        c.a = 0;
+        float t0 = Time.time;
         while (c.a > 0)
         {
             float value = Mathf.Max(1 - (Time.time - t0) / outDuration, 0);
