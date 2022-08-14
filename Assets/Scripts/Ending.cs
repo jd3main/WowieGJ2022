@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Ending : MonoBehaviour
 {
@@ -30,8 +31,8 @@ public class Ending : MonoBehaviour
 
         yield return null;
 
-        foreach (var s in endingInfos)
-            dialogueSystem._Enqueue(s);
+        string endingInfoStr = string.Join("\n", endingInfos.Select(refText=>refText.Value));
+        dialogueSystem._Enqueue(endingInfoStr);
 
         dialogueSystem.onDialogueClosed.RemoveListener(OnCloseDialogue);
         dialogueSystem.onDialogueClosed.AddListener(endingManager.Restart);
