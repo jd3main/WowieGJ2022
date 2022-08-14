@@ -2,15 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using Sirenix.OdinInspector;
 
 public class Game : MonoBehaviour
 {
-    public SAN san;
-    public Durability durability;
-    public Timer timer;
+    [Header("Timer")]
+    public TimerUI timerUI;
+    public float maxTime = 120;
+    [HideInInspector]
+    public static float curTime;
 
-    public float sanDecreaseSpeed = 1f;
+    
+    [Header("SAN")]
+    public BarValueUI sanUI;
+    public float maxSAN = 100;
+    public float initSAN = 70;
+    public float sanDropSpeed = 1f;
+    [HideInInspector]
+    public static float curSAN;
 
+    
+    [Header("Durability")]
+    public BarValueUI durabilityUI;
+    public float maxDurability = 100;
+    public float initDurability = 100;
+    [HideInInspector]
+    public static float curDurability;
+
+
+    [Header("Interactions")]
+    public float laserSAN = 5;
+    public float laserDurability = -6;
+
+    public float shieldSAN = 3;
+    public float shieldDurability = -4;
+
+    public float aimSAN = 4;
+    public float aimDurability = -3;
+
+    public float smallButtonSAN = -2;
+    public float smallButtonDurability = 2;
+
+    public float squareButtonSAN = 2;
+    public float squareButtonDurbility = -2;
+
+    public float acceleratorSAN = 4;
+    public float acceleratorDurability = -8;
+
+    public float breakSAN = 5;
+    public float breakDurability = -10;
+
+    [Header("Others")]
     [SerializeField]
     private LayerMask rayCastMask;
     private RaycastHit hit;
@@ -20,17 +63,39 @@ public class Game : MonoBehaviour
     public OnGameStartEvent onGameStart;
     public OnGameEndEvent onGameEnd;
 
+    private float oneSecondCounter;
     private bool isInteracting = false;
-    private int curTime;
     Coroutine animationCoroutine;
 
     void Awake()
     {
         instance = this;
-        curTime = Mathf.RoundToInt(timer.maxTime);
+
+        oneSecondCounter = 0;
+        curTime = 0;
+        curSAN = initSAN;
+        curDurability = initDurability;
     }
 
     void Update()
+    {
+        curTime += Time.deltaTime;
+        if (curTime >= maxTime)
+        {
+            SceneManager.LoadScene("Ending");
+        }
+        oneSecondCounter += Time.deltaTime;
+        if (oneSecondCounter >= 1)
+        {
+            oneSecondCounter -= 1;
+            curSAN -= sanDropSpeed;
+        }
+
+        CheckMouseClick();
+        UpdateUI();
+    }
+
+    private void CheckMouseClick()
     {
         if (!isInteracting && Input.GetMouseButtonDown(0))
         {
@@ -45,14 +110,14 @@ public class Game : MonoBehaviour
                 }
             }
         }
-
-        if (Mathf.RoundToInt(timer.remainingTime) < curTime)
-        {
-            curTime--;
-            san.DecreaseSAN(sanDecreaseSpeed);
-        }
     }
 
+    private void UpdateUI()
+    {
+        timerUI.Render(maxTime - curTime);
+        sanUI.Render(curSAN, maxSAN);
+        durabilityUI.Render(curDurability, maxDurability);
+    }
 
     public void StartGame()
     {
@@ -71,48 +136,48 @@ public class Game : MonoBehaviour
 
     public void ButtonLaserActivate()
     {
-        durability.DecreaseDurability(6);
-        san.IncreaseSAN(5);
+        curDurability += laserDurability;
+        curSAN += laserSAN;
     }
 
     public void ButtonShieldActivate()
     {
-        durability.DecreaseDurability(4);
-        san.IncreaseSAN(3);
+        curSAN += shieldSAN;
+        curDurability += shieldDurability;
     }
 
     public void ButtonAimActive()
     {
-        durability.DecreaseDurability(3);
-        san.IncreaseSAN(3);
+        curSAN += aimSAN;
+        curDurability += aimDurability;
     }
 
     public void SmallButtonActive()
     {
-        durability.IncreaseDurability(Random.Range(-3f, 2f));
-        san.DecreaseSAN(Random.Range(-3f, 3f));
+        curSAN += smallButtonSAN;
+        curDurability += smallButtonDurability;
     }
 
     public void SquareButtonActive()
     {
-        durability.DecreaseDurability(Random.Range(0, 3));
-        san.IncreaseSAN(Random.Range(1, 3));
+        curSAN += squareButtonSAN;
+        curDurability += squareButtonDurbility;
     }
 
-    public void AccelatorActive()
+    public void AcceleratorActive()
     {
-        durability.DecreaseDurability(8);
-        san.IncreaseSAN(4);
+        curSAN += acceleratorSAN;
+        curDurability += acceleratorDurability;
     }
 
     public void BreakActive()
     {
-        durability.DecreaseDurability(10);
-        san.IncreaseSAN(4);
+        curSAN += breakSAN;
+        curDurability += breakDurability;
         animationCoroutine = StartCoroutine(ShakeCameraAnimation());
     }
 
-    public IEnumerator ShakeCameraAnimation()
+    private IEnumerator ShakeCameraAnimation()
     {
         float shakeDuration = 1f;
         float shakeAmp = 0.005f;
