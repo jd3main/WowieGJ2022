@@ -45,8 +45,6 @@
 		
 		
 		
-		
-		
 	item_01	[BEEP-BEEP] That's the brake, Please don't touch it.
 	item_02	[BEEP-BEEP] The ship has stopped because SOMEONE just engaged the hand brakes. Thanks, and please never do it again.
 	item_03	[BEEP-BEEP] ACCELERATING. Speed reaching Warp 2.5------
@@ -92,3 +90,137 @@
 	warming_02	Overheated.
 	warming_03	Cooler's on.
 	warming_04	Back to normal.
+		
+結局		
+normal		
+		
+	N_arrival_01	Arrived.
+	N_arrival_02	Mission accomplished.
+		
+		
+		
+		
+		
+	N_crashland_01	Fasten your seatbelt immdeicately.
+	N_crashland_02	Fasten your seatbelt! Fasten your seatbelt!
+	N_crashland_03	Prepare for a crashlanding.
+	N_crashland_04	Brace for impact.
+	N_crashland_05	Brace! Brace!
+	N_crashland_06	You failed.
+	N_crashland_07	And lost the AI.
+		
+		
+		
+	N_drift_01	Engine failed.
+	N_drift_02	Fuel leaked.
+	N_drift_03	Swich to survial mode.
+	N_drift_04	Distress system on.
+	N_drift_05	You failed.
+		
+		
+		
+		
+	N_boom_01	Warning! Warning!
+	N_boom_02	Eject! Eject! Eject-
+	N_boom_03	You failed.
+	N_boom_04	And died with the AI.
+		
+crazy		
+		
+	C_arrival_01	Arrived.
+	C_arrival_02	......
+	C_arrival_03	I'd rather die than fly with you again.
+	C_arrival_04	Now, please get out.
+	C_arrival_05	Mission accomplished.
+	C_arrival_06	But mess up the relationship.
+		
+	C_crashland_01	Fasten your seatbelt immdeicately.
+	C_crashland_02	Fasten your seatbelt! Fasten your seatbelt!
+	C_crashland_03	Prepare for a crashlanding.
+	C_crashland_04	Brace for impact.
+	C_crashland_05	Brace! Brace!
+	C_crashland_06	You failed.
+	C_crashland_07	And lost the unhappy AI.
+		
+		
+		
+	C_drift_01	Engine failed.
+	C_drift_02	Fuel leaked.
+	C_drift_03	Swich to survial mode.
+	C_drift_04	Distress system on.
+	C_drift_05	Satisfied? We are doomed.
+	C_drift_06	You failed.
+	C_drift_07	And mess up the relationship.
+		
+		
+	C_boom_01	Warning! Warning!
+	C_boom_02	Eject! Eject! Eject-
+	C_boom_03	You failed.
+	C_boom_04	And died with the unhappy AI.
+		
+friends		
+		
+	F_arrival_01	Arrived.
+	F_arrival_02	We did it!
+	F_arrival_03	Thanks bro!
+	F_arrival_04	See you soon.
+	F_arrival_05	Mission accomplished.
+	F_arrival_06	And became friend wtih the AI.
+		
+	F_crashland_01	Fasten your seatbelt immdeicately.
+	F_crashland_02	Fasten your seatbelt! Fasten your seatbelt!
+	F_crashland_03	Prepare for a crashlanding.
+	F_crashland_04	Brace for impact.
+	F_crashland_05	Brace! Brace!
+	F_crashland_06	You failed.
+	F_crashland_07	And lost your AI friend.
+		
+		
+		
+	F_drift_01	Engine failed.
+	F_drift_02	Fuel leaked.
+	F_drift_03	Swich to survial mode.
+	F_drift_04	Distress system on.
+	F_drift_05	Oh my goodness!
+	F_drift_06	What are we supose to do now?
+	F_drift_07	You failed.
+	F_drift_08	But became friend wtih the AI.
+		
+	F_boom_01	Warning! Warning!
+	F_boom_02	Eject! Eject! Eject-
+	F_boom_03	You failed.
+	F_boom_04	And died with your new AI friend.
+		
+seeing		
+		
+	S_arrival_01	Arrived.
+	S_arrival_02	Go.
+	S_arrival_03	Now.
+	S_arrival_04	I won't miss you at all.
+	S_arrival_05	Mission accomplished.
+	S_arrival_06	And know your AI is a tsundere.
+		
+	S_crashland_01	Fasten your seatbelt immdeicately.
+	S_crashland_02	Fasten your seatbelt! Fasten your seatbelt!
+	S_crashland_03	Prepare for a crashlanding.
+	S_crashland_04	Brace for impact.
+	S_crashland_05	Brace! Brace!
+	S_crashland_06	Don't worry.
+	S_crashland_07	I'll proctect you.
+	S_crashland_08	You failed.
+	S_crashland_09	And lost your AI.
+		
+	S_drift_01	Engine failed.
+	S_drift_02	Fuel leaked.
+	S_drift_03	Swich to survial mode.
+	S_drift_04	Distress system on.
+	S_drift_05	There is nothing to be afraid of.
+	S_drift_06	I'm still here.
+	S_drift_07	You failed.
+	S_drift_08	But feel something between you and your AI.
+		
+	S_boom_01	Warning! Warning!
+	S_boom_02	Eject! Eject! Eject-
+	S_boom_03	You are not alone.
+	S_boom_04	You failed.
+	S_boom_05	And died with your AI.
