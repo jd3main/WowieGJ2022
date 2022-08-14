@@ -8338,6 +8338,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7001746101658646009, guid: aaf89cb2ff3d76648a498c5334f74ea3, type: 3}
+      propertyPath: m_text
+      value: Don't touch anything you fool.
+      objectReference: {fileID: 0}
     - target: {fileID: 7001746102812433017, guid: aaf89cb2ff3d76648a498c5334f74ea3, type: 3}
       propertyPath: nextKey
       value: 323

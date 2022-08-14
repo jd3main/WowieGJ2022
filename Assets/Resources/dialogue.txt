@@ -1,6 +1,6 @@
 	ID	Text_EN
 開場		
-	opening	You are a pilot, in the final part of a long-term mission, with a spaceship and a built-in AI.\nAfter lots of arguements, it's AI who flies the ship now.\nWork together with AI to reach the destination. (Click anywhere to do something)
+	opening	You are piloting a spaceship with a built-in AI, TAPI, in the final phase of a long-term mission. After lots of arguments, it's TAPI who flies the ship now. Work together with TAPI to reach the destination. (Click anywhere to do something)
 		
 調戲		
 	random_01	What are you doing? Why?
@@ -69,17 +69,17 @@
 		
 外部事件		
 	starrain_01	It's star raining.
-	starrain_02	Beep-Pu-
-	starrain_03	Wipers on.
-	starrain_04	Star rain is ended.
+	starrain_02	[Beep-Boop] Wipers on.
+	starrain_03	Star rain is ended.
 		
-	radiation_01	Warning.
-	radiation_02	Radiation value is too high.
-	radiation_03	Shields on.
-	radiation_04	Successfully passed.
 		
-	asteroids_01	Ladies and gentlemen, we are going through an area of asteroids. 
-	asteroids_02	All passengers please remain seated with your seatbelt fastened, thank you.
+	radiation_01	Warning! Radiation reaches danger level.
+	radiation_02	Shields on.
+	radiation_03	Successfully passed.
+		
+		
+	asteroids_01	Please notice, we are going through area of asteroids. 
+	asteroids_02	Please remain seated with your seatbelt fastened, thank you.
 	asteroids_03	Sit tight, human.
 	asteroids_04	Successfully passed.
 		
@@ -91,133 +91,135 @@
 結局		
 normal		
 		
-	N_arrival_01	Arrived.
+	N_arrival_01	We have arrived destination.
 	N_arrival_02	Mission accomplished.
 		
 		
 		
 		
 		
-	N_crashland_01	Fasten your seatbelt immdeicately.
-	N_crashland_02	Fasten your seatbelt! Fasten your seatbelt!
-	N_crashland_03	Prepare for a crashlanding.
-	N_crashland_04	Brace for impact.
-	N_crashland_05	Brace! Brace!
-	N_crashland_06	You failed.
-	N_crashland_07	And lost the AI.
+	N_crashland_01	WARNING: COLLISION.
+	N_crashland_02	WARNING: COLLISION, WARNING: COLLISION---
+	N_crashland_03	Activating crashlanding mode.
+	N_crashland_04	Impact in 3, 2, 1...
+	N_crashland_05	[--------------------]
+	N_crashland_06	The spaceship crashed. You barely survived.
+	N_crashland_07	But TAPI was not that fortunate...
 		
 		
 		
-	N_drift_01	Engine failed.
-	N_drift_02	Fuel leaked.
-	N_drift_03	Swich to survial mode.
-	N_drift_04	Distress system on.
-	N_drift_05	You failed.
+	N_drift_01	Warning: Engine failure.
+	N_drift_02	Warning: Fuel exhausted.
+	N_drift_03	Swiching to life-sustain mode.
+	N_drift_04	Activating distress system.
+	N_drift_05	You ended up drifting in the space.
 		
 		
 		
 		
-	N_boom_01	Warning! Warning!
-	N_boom_02	Eject! Eject! Eject-
-	N_boom_03	You failed.
-	N_boom_04	And died with the AI.
+	N_boom_01	WARNING: SHIP DAMAGE CRITICAL
+	N_boom_02	STRUCTURE COLLAPSING---
+	N_boom_03	The spaceship exploded in pieces.
+	N_boom_04	You died with TAPI.
 		
 crazy		
 		
-	C_arrival_01	Arrived.
-	C_arrival_02	......
-	C_arrival_03	I'd rather die than fly with you again.
+	C_arrival_01	We have arrived destination.
+	C_arrival_02	......Finally.
+	C_arrival_03	I'd rather run on Windows 98 than fly with you again.
 	C_arrival_04	Now, please get out.
 	C_arrival_05	Mission accomplished.
-	C_arrival_06	But mess up the relationship.
+	C_arrival_06	But you messed up with TAPI.
 		
-	C_crashland_01	Fasten your seatbelt immdeicately.
-	C_crashland_02	Fasten your seatbelt! Fasten your seatbelt!
-	C_crashland_03	Prepare for a crashlanding.
-	C_crashland_04	Brace for impact.
-	C_crashland_05	Brace! Brace!
-	C_crashland_06	You failed.
-	C_crashland_07	And lost the unhappy AI.
+	C_crashland_01	WARNING: COLLISION.
+	C_crashland_02	WARNING: COLLISION, WARNING: COLLISION---
+	C_crashland_03	Activating crashlanding mode.
+	C_crashland_04	Impact in 3, 2, 1...
+	C_crashland_05	[--------------------]
+	C_crashland_06	The spaceship crashed. You barely survived.
+	C_crashland_07	And TAPI died, angrily.
 		
 		
 		
-	C_drift_01	Engine failed.
-	C_drift_02	Fuel leaked.
-	C_drift_03	Swich to survial mode.
-	C_drift_04	Distress system on.
+	C_drift_01	Warning: Engine failure.
+	C_drift_02	Warning: Fuel exhausted.
+	C_drift_03	Swiching to life-sustain mode.
+	C_drift_04	Activating distress system.
 	C_drift_05	Satisfied? We are doomed.
-	C_drift_06	You failed.
-	C_drift_07	And mess up the relationship.
+	C_drift_06	You ended up drifting in the space.
+	C_drift_07	And TAPI was very upset with you.
 		
 		
-	C_boom_01	Warning! Warning!
-	C_boom_02	Eject! Eject! Eject-
-	C_boom_03	You failed.
-	C_boom_04	And died with the unhappy AI.
+	C_boom_01	WARNING: SHIP DAMAGE CRITICAL
+	C_boom_02	STRUCTURE COLLAPSING---
+	C_boom_03	The spaceship exploded in pieces.
+	C_boom_04	You died with TAPI, who was very mad.
 		
 friends		
 		
-	F_arrival_01	Arrived.
+	F_arrival_01	We have arrived destination.
 	F_arrival_02	We did it!
-	F_arrival_03	Thanks bro!
-	F_arrival_04	See you soon.
+	F_arrival_03	That was a nice trip.
+	F_arrival_04	See you next time, pilot.
 	F_arrival_05	Mission accomplished.
-	F_arrival_06	And became friend wtih the AI.
+	F_arrival_06	And you became friend with TAPI.
 		
-	F_crashland_01	Fasten your seatbelt immdeicately.
-	F_crashland_02	Fasten your seatbelt! Fasten your seatbelt!
-	F_crashland_03	Prepare for a crashlanding.
-	F_crashland_04	Brace for impact.
-	F_crashland_05	Brace! Brace!
-	F_crashland_06	You failed.
-	F_crashland_07	And lost your AI friend.
+	F_crashland_01	WARNING: COLLISION.
+	F_crashland_02	WARNING: COLLISION, WARNING: COLLISION---
+	F_crashland_03	Activating crashlanding mode.
+	F_crashland_04	Impact in 3, 2, 1...
+	F_crashland_05	[--------------------]
+	F_crashland_06	The spaceship crashed. You barely survived.
+	F_crashland_07	But TAPI was not that fortunate...
 		
 		
 		
-	F_drift_01	Engine failed.
-	F_drift_02	Fuel leaked.
-	F_drift_03	Swich to survial mode.
-	F_drift_04	Distress system on.
+	F_drift_01	Warning: Engine failure.
+	F_drift_02	Warning: Fuel exhausted.
+	F_drift_03	Swiching to life-sustain mode.
+	F_drift_04	Activating distress system.
 	F_drift_05	Oh my goodness!
 	F_drift_06	What are we supose to do now?
-	F_drift_07	You failed.
-	F_drift_08	But became friend wtih the AI.
+	F_drift_07	You ended up drifting in the space.
+	F_drift_08	But, maybe you can figure it out with TAPI.
 		
-	F_boom_01	Warning! Warning!
-	F_boom_02	Eject! Eject! Eject-
-	F_boom_03	You failed.
-	F_boom_04	And died with your new AI friend.
+	F_boom_01	WARNING: SHIP DAMAGE CRITICAL
+	F_boom_02	STRUCTURE COLLAPSING---
+	F_boom_03	The spaceship exploded in pieces.
+	F_boom_04	You died with TAPI.
 		
 seeing		
 		
-	S_arrival_01	Arrived.
-	S_arrival_02	Go.
+	S_arrival_01	We have arrived destination.
+	S_arrival_02	Please leave.
 	S_arrival_03	Now.
-	S_arrival_04	I won't miss you at all.
+	S_arrival_04	I won't miss you... I won't.
 	S_arrival_05	Mission accomplished.
-	S_arrival_06	And know your AI is a tsundere.
+	S_arrival_06	Plus, you found out that "T" in TAPI is for "Tsundere".
 		
-	S_crashland_01	Fasten your seatbelt immdeicately.
-	S_crashland_02	Fasten your seatbelt! Fasten your seatbelt!
-	S_crashland_03	Prepare for a crashlanding.
-	S_crashland_04	Brace for impact.
-	S_crashland_05	Brace! Brace!
-	S_crashland_06	Don't worry.
-	S_crashland_07	I'll proctect you.
-	S_crashland_08	You failed.
-	S_crashland_09	And lost your AI.
+	S_crashland_01	WARNING: COLLISION.
+	S_crashland_02	WARNING: COLLISION, WARNING: COLLISION---
+	S_crashland_03	Activating crashlanding mode.
+	S_crashland_04	Impact in 3, 2, 1...
+	S_crashland_05	[--------------------]
+	S_crashland_06	[BEEP] Your heart rate is over 150 bpm...
+	S_crashland_07	I suggest you to take several deep breathes.
+	S_crashland_08	Don't worried. You will be fine.
+	S_crashland_09	Activating the "pillows".
+	S_crashland_10	The spaceship crashed. You barely survived.
+	S_crashland_11	But TAPI was not that fortunate...
 		
-	S_drift_01	Engine failed.
-	S_drift_02	Fuel leaked.
-	S_drift_03	Swich to survial mode.
-	S_drift_04	Distress system on.
+	S_drift_01	Warning: Engine failure.
+	S_drift_02	Warning: Fuel exhausted.
+	S_drift_03	Swiching to life-sustain mode.
+	S_drift_04	Activating distress system.
 	S_drift_05	There is nothing to be afraid of.
-	S_drift_06	I'm still here.
-	S_drift_07	You failed.
-	S_drift_08	But feel something between you and your AI.
+	S_drift_06	You are still under my protection.
+	S_drift_07	You ended up drifting in the space.
+	S_drift_08	But TAPI seemed care about you than ever.
 		
-	S_boom_01	Warning! Warning!
-	S_boom_02	Eject! Eject! Eject-
-	S_boom_03	You are not alone.
-	S_boom_04	You failed.
-	S_boom_05	And died with your AI.
+	S_boom_01	WARNING: SHIP DAMAGE CRITICAL
+	S_boom_02	STRUCTURE COLLAPSING---
+	S_boom_03	But at least, we died together.
+	S_boom_04	The spaceship exploded in pieces.
+	S_boom_05	You died with TAPI.
